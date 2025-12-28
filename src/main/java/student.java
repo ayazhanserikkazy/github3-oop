@@ -1,33 +1,26 @@
-class Student extends Human {
+class Student extends Human implements IStudy {
 
-    private String major;
-    private float gpa;
+    public final String university;
 
-    public Student(int age, String name, boolean active,
-                   String major, float gpa) {
-        super(age, name, active);
-        this.major = major;
-        this.gpa = gpa;
+    public Student(String name, String university) {
+        super(name);
+        this.university = university;
     }
 
-    public String getMajor() {
-        return major;
+    public void info() {
+        System.out.println("Student: " + name);
     }
 
-    public void setMajor(String major) {
-        this.major = major;
+    public void study() {
+        System.out.println(name + " studies");
     }
 
-    public float getGpa() {
-        return gpa;
+    public void exam() {
+        System.out.println(name + " passed exam");
     }
 
-    public void setGpa(float gpa) {
-        this.gpa = gpa;
-    }
-
-    @Override
-    public String getRole() {
-        return "I am a student";
+    public final void showUniversity() {
+        System.out.println("University: " + university);
     }
 }
+

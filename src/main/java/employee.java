@@ -1,35 +1,27 @@
-class Employee extends Human {
+class Employee extends Human implements IStudy, IWork {
 
-    public static String company = "TechCorp"; // static field
-
-    private String position;
-    private float salary;
-
-    public Employee(int age, String name, boolean active,
-                    String position, float salary) {
-        super(age, name, active);
-        this.position = position;
-        this.salary = salary;
+    public Employee(String name) {
+        super(name);
     }
 
-    public String getPosition() {
-        return position;
+    public void info() {
+        System.out.println("Employee: " + name);
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void study() {
+        System.out.println(name + " studies");
     }
 
-    public float getSalary() {
-        return salary;
+    public void exam() {
+        System.out.println(name + " passed test");
     }
 
-    public void setSalary(float salary) {
-        this.salary = salary;
+    public void work() {
+        System.out.println(name + " works");
     }
 
-    @Override
-    public String getRole() {
-        return "I am an employee";
+    public void salary() {
+        System.out.println("Gets salary");
     }
 }
+
